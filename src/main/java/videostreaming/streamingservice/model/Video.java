@@ -2,6 +2,8 @@ package videostreaming.streamingservice.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Table(name = "videos")
 @Entity
 public class Video {
@@ -18,13 +20,29 @@ public class Video {
 
     private String thumbnailImageUrl;
 
+    private Long videoDuration;
+
+    private String videoDescription;
+
+    private LocalDateTime creationDateTime;
+
+    private Long totalViews;
+
     public Video() {}
 
-    public Video(String ownerUserName, String originalFileName, String videoUrl, String thumbnailImageUrl) {
+    public Video(String ownerUserName, String originalFileName, String videoUrl, String thumbnailImageUrl, Long videoDuration, String videoDescription) {
         this.ownerUserName = ownerUserName;
         this.originalFileName = originalFileName;
         this.videoUrl = videoUrl;
         this.thumbnailImageUrl = thumbnailImageUrl;
+        this.videoDuration = videoDuration;
+        this.videoDescription = videoDescription;
+        this.creationDateTime = LocalDateTime.now();
+        this.totalViews = 0L;
+    }
+
+    public void incrementViews() {
+        totalViews++;
     }
 
     public Long getId() {
@@ -35,8 +53,20 @@ public class Video {
         return ownerUserName;
     }
 
-    public void setOwnerUserName(String ownerUserName) {
-        this.ownerUserName = ownerUserName;
+    public Long getVideoDuration() {
+        return videoDuration;
+    }
+
+    public String getVideoDescription() {
+        return videoDescription;
+    }
+
+    public LocalDateTime getCreationDateTime() {
+        return creationDateTime;
+    }
+
+    public Long getTotalViews() {
+        return totalViews;
     }
 
     public String getOriginalFileName() {
@@ -49,6 +79,10 @@ public class Video {
 
     public String getVideoUrl() {
         return videoUrl;
+    }
+
+    public void setVideoDescription(String videoDescription) {
+        this.videoDescription = videoDescription;
     }
 
     public void setVideoUrl(String videoUrl) {

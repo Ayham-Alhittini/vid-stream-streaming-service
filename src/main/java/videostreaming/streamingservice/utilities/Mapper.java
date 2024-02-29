@@ -13,7 +13,11 @@ public class Mapper {
                 video.getOwnerUserName(),
                 video.getOriginalFileName(),
                 video.getVideoUrl(),
-                video.getThumbnailImageUrl()
+                video.getThumbnailImageUrl(),
+                video.getVideoDuration(),
+                video.getVideoDescription(),
+                video.getCreationDateTime(),
+                video.getTotalViews()
         );
     }
 

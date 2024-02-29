@@ -13,7 +13,7 @@ import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
 @Service
 public class AuthenticationService {
-    private final String serviceUrl = "http://host.docker.internal:8081/api/auth";
+    private final String serviceUrl = "http://host.docker.internal:9081/api/auth";
 
     private final RestTemplate restTemplate;
 
