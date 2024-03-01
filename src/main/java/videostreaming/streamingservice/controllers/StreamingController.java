@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import videostreaming.streamingservice.data.VideoRepository;
 import videostreaming.streamingservice.dto.VideoDto;
 import videostreaming.streamingservice.model.Video;
-import videostreaming.streamingservice.serviceintegrations.AuthenticationService;
+import videostreaming.streamingservice.externalservices.AuthenticationService;
 import videostreaming.streamingservice.utilities.Mapper;
 
 import java.util.List;

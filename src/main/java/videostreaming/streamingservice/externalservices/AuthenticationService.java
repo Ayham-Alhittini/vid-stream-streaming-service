@@ -1,4 +1,4 @@
-package videostreaming.streamingservice.serviceintegrations;
+package videostreaming.streamingservice.externalservices;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
